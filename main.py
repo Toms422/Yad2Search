@@ -13,7 +13,7 @@ async def send_message_async(bot, chat_id, message_text):
 
 async def main(params,neighborhood,bot,chat_id_Tom,chat_id_Lee):
     TotalCheck=False
-    json_file_path = r'.\unique_date_added.json'
+    json_file_path = 'unique_date_added.json'
     try:
         with open(json_file_path, 'r') as json_file:
             unique_date_added = set(json.load(json_file))
