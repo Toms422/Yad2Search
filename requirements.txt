@@ -1,2 +1,2 @@
 requests~=2.31.0
-telegram~=0.0.1
+pip install python-telegram-bot~=20.6
