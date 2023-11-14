@@ -36,3 +36,17 @@ Before running the script, make sure you have the following installed:
     ```bash
    python main.py
 
+
+## Customization
+You can customize the search parameters for each neighborhood by modifying the params dictionaries in the script. Adjust the parameters such as city, rooms, price, etc., according to your preferences.
+
+## Contributing
+Feel free to contribute to the development of this script by submitting issues or pull requests.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+Make sure to replace `'YOUR_BOT_TOKEN'`, `'YOUR_CHAT_ID_TOM'`, and `'YOUR_CHAT_ID_LEE'` with your actual Telegram bot token and chat IDs. Additionally, update the Git repository link in the clone command if your script is in a Git repository.
+
+
