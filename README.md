@@ -17,6 +17,7 @@ Before running the script, make sure you have the following installed:
    git clone https://github.com/your-username/your-repository.git
 
 2. Install the required packages:
+   ```bash
    pip install -r requirements.txt
    
 3.Obtain a Telegram Bot Token:
@@ -28,6 +29,7 @@ Replace 'YOUR_BOT_TOKEN' with the token you obtained.
 Replace 'YOUR_CHAT_ID_TOM'
 
 Run the script:
-python your_script_name.py
+ ```bash
+python main.py
 
 
