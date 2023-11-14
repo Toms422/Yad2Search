@@ -3,7 +3,6 @@ name: run main.py
 on:
   schedule:
     - cron: '*/3 * * * *'
-
 jobs:
   build:
     runs-on: ubuntu-latest
