@@ -25,7 +25,7 @@ Before running the script, make sure you have the following installed:
    ```bash
    Create a new bot on Telegram by talking to the @BotFather.
 
-Copy the generated token.
+  Copy the generated token.
 
 4. Update the script:
     ```bash  
