@@ -1,4 +1,4 @@
-# Apartment Notifier Script
+# Yad2 Apartment Notifier Script
 
 This script is designed to monitor real estate listings on [Yad2](https://www.yad2.co.il/) and notify users about new apartments based on specified criteria. It utilizes the Telegram API to send notifications.
 
