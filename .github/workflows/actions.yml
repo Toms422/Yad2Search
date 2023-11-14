@@ -1,3 +1,4 @@
+---
 name: run main.py
 on:
   schedule:
@@ -17,17 +18,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Commit and push
-        run: |
+        run: >
           git config user.name "${GITHUB_ACTOR}"
+
 
 
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
 
+
           git add -A  # or git add -A to add all files
 
 
+
           git commit -m "Updated unique_date_added.json"  # change this message if you want
+
 
 
           git push "https://${GITHUB_ACTOR}:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:main || exit 0
