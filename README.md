@@ -21,7 +21,10 @@ Before running the script, make sure you have the following installed:
    pip install -r requirements.txt
    
 3.Obtain a Telegram Bot Token:
-Create a new bot on Telegram by talking to the BotFather.
+
+   ```bash
+ Create a new bot on Telegram by talking to the BotFather.
+
 Copy the generated token.
 
 Update the script:
