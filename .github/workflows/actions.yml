@@ -18,6 +18,8 @@ jobs:
           pip install -r requirements.txt
       - name: read unique_date_added.json
         run: cat unique_date_added.json
+      - name: run main.py
+        run: python main.py 
      
 
 
