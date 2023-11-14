@@ -30,10 +30,9 @@ Copy the generated token.
 4. Update the script:
     ```bash  
    Replace 'YOUR_BOT_TOKEN' with the token you obtained.
-   Replace 'YOUR_CHAT_ID_TOM'
+   Replace 'YOUR_CHAT_ID_TOM' with your actual chat IDs
 
 5. Run the script:
     ```bash
    python main.py
-
 
