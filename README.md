@@ -12,27 +12,28 @@ Before running the script, make sure you have the following installed:
 ## Usage
 
 1. Clone the repository:
-
+   
    ```bash
    git clone https://github.com/Toms422/Yad2Search.git
 
 2. Install the required packages:
+   
    ```bash
    pip install -r requirements.txt
    
-3.Obtain a Telegram Bot Token:
-
+3. Obtain a Telegram Bot Token:
    ```bash
- Create a new bot on Telegram by talking to the BotFather.
+   Create a new bot on Telegram by talking to the BotFather.
 
 Copy the generated token.
 
-Update the script:
-Replace 'YOUR_BOT_TOKEN' with the token you obtained.
-Replace 'YOUR_CHAT_ID_TOM'
+4. Update the script:
+    ```bash  
+   Replace 'YOUR_BOT_TOKEN' with the token you obtained.
+   Replace 'YOUR_CHAT_ID_TOM'
 
-Run the script:
- ```bash
-python main.py
+5. Run the script:
+    ```bash
+   python main.py
 
 
