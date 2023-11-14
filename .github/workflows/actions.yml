@@ -1,6 +1,8 @@
 ---
 name: run main.py
 on:
+permissions:
+  contents: write
   schedule:
     - cron: 00-59/30 8-20/1 * * *
 jobs:
