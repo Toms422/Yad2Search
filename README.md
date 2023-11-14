@@ -16,3 +16,18 @@ Before running the script, make sure you have the following installed:
    ```bash
    git clone https://github.com/your-username/your-repository.git
 
+2. Install the required packages:
+   pip install -r requirements.txt
+   
+3.Obtain a Telegram Bot Token:
+Create a new bot on Telegram by talking to the BotFather.
+Copy the generated token.
+
+Update the script:
+Replace 'YOUR_BOT_TOKEN' with the token you obtained.
+Replace 'YOUR_CHAT_ID_TOM'
+
+Run the script:
+python your_script_name.py
+
+
