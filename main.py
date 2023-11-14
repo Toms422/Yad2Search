@@ -69,7 +69,7 @@ async def main(params,neighborhood,bot,chat_id_Tom,chat_id_Lee):
         await send_message_async(bot, chat_id_Lee, f' דירות חדשות בשכונת *{neighborhood}*: {count}')
 
 
-    for i in range(3):
+    for i in range(1):
         base_url = "https://gw.yad2.co.il/feed-search-legacy/realestate/rent"
         params['page'] = i
         # Encode the parameters
