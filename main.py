@@ -95,11 +95,12 @@ async def main(params,neighborhood,bot,chat_id_Tom,chat_id_Lee):
                         price=d['price']
                         details=d['row_3'][0]+", "+d['row_3'][1]+", "+d['row_3'][2]
                         date_added = d['date_added']
+                        Addid="https://www.yad2.co.il/item/"+d['id']
                         if date_added not in unique_date_added:
                             unique_date_added.add(date_added)
                             #apartment=d['date_added'], d['date'], d['price'], d['title_1'], d['line_2'], d['line_1'], d['line_3'],neighborhood
-                            await send_message_async(bot, chat_id_Tom, f' *כתובת*: {Address}, *מחיר*: {price}, *פרטים נוספים*:  {details}')
-                            await send_message_async(bot, chat_id_Lee,f' *כתובת*: {Address}, *מחיר*: {price}, *פרטים נוספים*:  {details}')
+                            await send_message_async(bot, chat_id_Tom,f' *כתובת*: {Address}, *מחיר*: {price}. *פרטים נוספים*:  {details} . [קישור למודעה]({Addid}) ')
+                            await send_message_async(bot, chat_id_Lee,f' *כתובת*: {Address}, *מחיר*: {price}. *פרטים נוספים*:  {details} . [קישור למודעה]({Addid}) ')
                             await bot.send_location(chat_id=chat_id_Tom, latitude=d['coordinates']['latitude'], longitude=d['coordinates']['longitude'])
                             await bot.send_location(chat_id=chat_id_Lee, latitude=d['coordinates']['latitude'], longitude=d['coordinates']['longitude'])
 
