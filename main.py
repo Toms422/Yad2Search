@@ -138,170 +138,29 @@ if __name__ == "__main__":
     chat_id_Tom = 660144693
     chat_id_Lee = 5786521242
 
-    # Define the parameters
-    #שכונת הראשונים, 2.5-4 חדרים, עד 7000 שקל, כולל מרפסת, לא מתיווך
-    params1 = {
-        'topArea': 2,
-        'area': 3,
-        'city': 8600,
-        'rooms': '2.5-4',
-        'price': '0-7000',
-        'balcony': 1,
-        'neighborhood': 1647,
-        'squaremeter': '65--1',
-        'forceLdLoad': True,
-    }
+    # Define property search parameters for different neighborhoods
+    neighborhoods_params = [
+        {'name': "הראשונים-רג", 'topArea': 2, 'area': 3, 'city': 8600, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 1647, 'squaremeter': '65--1', 'forceLdLoad': True},
+        {'name': "החשמונאים-רג", 'topArea': 2, 'area': 3, 'city': 8600, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 1477, 'squaremeter': '65--1', 'forceLdLoad': True},
+        {'name': "החרוזים-רג", 'topArea': 2, 'area': 3, 'city': 8600, 'rooms': '2.5-4', 'price': '0-7000', 'balcony': 1,'neighborhood': 327, 'squaremeter': '65--1', 'forceLdLoad': True},
+        {'name': "בורכוב-גבעתיים", 'topArea': 2, 'area': 3, 'city': 6300, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 355, 'squaremeter': '65--1', 'forceLdLoad': True},
+        {'name': "הלה-גבעתיים", 'topArea': 2, 'area': 3, 'city': 6300, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 991510, 'squaremeter': '65--1', 'forceLdLoad': True},
+        {'name': "ארלוזורוב-גבעתיים", 'topArea': 2, 'area': 3, 'city': 6300, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 1642, 'squaremeter': '65--1', 'forceLdLoad': True},
+        {'name': "גבעת רמבם-גבעתיים", 'topArea': 2, 'area': 3, 'city': 6300, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 1643, 'squaremeter': '65--1', 'forceLdLoad': True},
+        {'name': "קריית יוסף-גבעתיים", 'topArea': 2, 'area': 3, 'city': 6300, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 1644, 'squaremeter': '65--1', 'forceLdLoad': True},
+        {'name': "נחלת יצחק-תל אביב", 'topArea': 2, 'area': 1, 'city': 5000, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 317, 'squaremeter': '65--1', 'forceLdLoad': True},
+        {'name': "מונטיפיורי-תל אביב", 'topArea': 2, 'area': 1, 'city': 5000, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 485, 'squaremeter': '65--1', 'forceLdLoad': True},
+        {'name': "צפון ישן-תל אביב", 'topArea': 2, 'area': 1, 'city': 5000, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'parking': 1, 'neighborhood': 204, 'squaremeter': '65--1', 'forceLdLoad': True},
+        {'name': "בבלי-תל אביב", 'topArea': 2, 'area': 1, 'city': 5000, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'parking': 1, 'neighborhood': 1518, 'squaremeter': '65--1', 'forceLdLoad': True},
+    ]
 
-    # גבעתיים שכונת בורכוב, 2.5-4 חדרים, עד 7000 שקל, כולל מרפסת, לא מתיווך
-    params2 = {
-        'topArea': 2,
-        'area': 3,
-        'city': 6300,
-        'rooms': '2.5-4',
-        'price': '0-7000',
-        'balcony': 1,
-        'neighborhood': 355,
-        'squaremeter': '65--1',
-        'forceLdLoad': True,
-    }
-    # גבעתיים שכונת הל"ה, 2.5-4 חדרים, עד 7000 שקל, כולל מרפסת, לא מתיווך
-    params3 = {
-        'topArea': 2,
-        'area': 3,
-        'city': 6300,
-        'rooms': '2.5-4',
-        'price': '0-7000',
-        'balcony': 1,
-        'neighborhood': 991510,
-        'squaremeter': '65--1',
-        'forceLdLoad': True,
-    }
-    # שכונת החשמונאים, 2.5-4 חדרים, עד 7000 שקל, כולל מרפסת, לא מתיווך
-    params4 = {
-        'topArea': 2,
-        'area': 3,
-        'city': 8600,
-        'rooms': '2.5-4',
-        'price': '0-7000',
-        'balcony': 1,
-        'neighborhood': 1477,
-        'squaremeter': '65--1',
-        'forceLdLoad': True,
-    }
-    # גבעתיים שכונת ארלוזורוב, 2.5-4 חדרים, עד 7000 שקל, כולל מרפסת, לא מתיווך
-    params5 = {
-        'topArea': 2,
-        'area': 3,
-        'city': 6300,
-        'rooms': '2.5-4',
-        'price': '0-7000',
-        'balcony': 1,
-        'neighborhood': 1642,
-        'squaremeter': '65--1',
-        'forceLdLoad': True,
-    }
-    # גבעתיים שכונת גבעת רמבם, 2.5-4 חדרים, עד 7000 שקל, כולל מרפסת, לא מתיווך
-    params6 = {
-        'topArea': 2,
-        'area': 3,
-        'city': 6300,
-        'rooms': '2.5-4',
-        'price': '0-7000',
-        'balcony': 1,
-        'neighborhood': 1643,
-        'squaremeter': '65--1',
-        'forceLdLoad': True,
-    }
-    # תל אביב נחלת יצחק, 2.5-4 חדרים, עד 7000 שקל, כולל מרפסת, לא מתיווך
-    params7 = {
-        'topArea': 2,
-        'area': 1,
-        'city': 5000,
-        'rooms': '2.5-4',
-        'price': '0-7000',
-        'balcony': 1,
-        'neighborhood': 317,
-        'squaremeter': '65--1',
-        'forceLdLoad': True,
-    }
-    # תל אביב מונטיפיורי, 2.5-4 חדרים, עד 7000 שקל, כולל מרפסת, לא מתיווך
-    params8 = {
-        'topArea': 2,
-        'area': 1,
-        'city': 5000,
-        'rooms': '2.5-4',
-        'price': '0-7000',
-        'balcony': 1,
-        'neighborhood': 485,
-        'squaremeter': '65--1',
-        'forceLdLoad': True,
-    }
-    # גבעתיים שכונת קריית יוסף, 2.5-4 חדרים, עד 7000 שקל, כולל מרפסת, לא מתיווך
-    params9 = {
-        'topArea': 2,
-        'area': 3,
-        'city': 6300,
-        'rooms': '2.5-4',
-        'price': '0-7000',
-        'balcony': 1,
-        'neighborhood': 1644,
-        'squaremeter': '65--1',
-        'forceLdLoad': True,
-    }
-    # רמת גן שכונת החרוזים, 2.5-4 חדרים, עד 7000 שקל, כולל מרפסת, לא מתיווך
-    params10 = {
-        'topArea': 2,
-        'area': 3,
-        'city': 8600,
-        'rooms': '2.5-4',
-        'price': '0-7000',
-        'balcony': 1,
-        'neighborhood': 327,
-        'squaremeter': '65--1',
-        'forceLdLoad': True,
-    }
+    # Check for new properties in each neighborhood
+    new_properties = []
+    for params in neighborhoods_params:
+        check_new = loop.run_until_complete(main(params, params['name'], bot, chat_id_Tom, chat_id_Lee))
+        new_properties.append(check_new)
 
-    # תל אביב צפון ישן, 2.5-4 חדרים, עד 7000 שקל, כולל מרפסת, לא מתיווך
-    params11 = {
-        'topArea': 2,
-        'area': 1,
-        'city': 5000,
-        'rooms': '2.5-4',
-        'price': '0-7000',
-        'balcony': 1,
-        'parking':1,
-        'neighborhood': 204,
-        'squaremeter': '65--1',
-        'forceLdLoad': True,
-    }
-
-     # תל אביב צפון ישן, 2.5-4 חדרים, עד 7000 שקל, כולל מרפסת, לא מתיווך
-    params12 = {
-        'topArea': 2,
-        'area': 1,
-        'city': 5000,
-        'rooms': '2.5-4',
-        'price': '0-7000',
-        'balcony': 1,
-        'parking':1,
-        'neighborhood': 1518,
-        'squaremeter': '65--1',
-        'forceLdLoad': True,
-    }
-
-    checkNew1=loop.run_until_complete(main(params1,"הראשונים-רג" ,bot,chat_id_Tom,chat_id_Lee))
-    checkNew4=loop.run_until_complete(main(params4, "החשמונאים-רג",bot,chat_id_Tom,chat_id_Lee))
-    checkNew10=loop.run_until_complete(main(params10, "החרוזים-רג",bot,chat_id_Tom,chat_id_Lee))
-    checkNew2=loop.run_until_complete(main(params2,"בורכוב-גבעתיים",bot,chat_id_Tom,chat_id_Lee))
-    checkNew3=loop.run_until_complete(main(params3, "הלה-גבעתיים",bot,chat_id_Tom,chat_id_Lee))
-    checkNew9=loop.run_until_complete(main(params9, "קריית יוסף-גבעתיים",bot,chat_id_Tom,chat_id_Lee))
-    checkNew5=loop.run_until_complete(main(params5, "ארלוזורוב-גבעתיים",bot,chat_id_Tom,chat_id_Lee))
-    checkNew6=loop.run_until_complete(main(params6, "גבעת רמבם-גבעתיים",bot,chat_id_Tom,chat_id_Lee))
-    checkNew7=loop.run_until_complete(main(params7, "נחלת יצחק-תל אביב",bot,chat_id_Tom,chat_id_Lee))
-    checkNew8=loop.run_until_complete(main(params8, "מונטיפיורי-תל אביב",bot,chat_id_Tom,chat_id_Lee))
-    checkNew11=loop.run_until_complete(main(params11, "צפון ישן-תל אביב",bot,chat_id_Tom,chat_id_Lee))
-    checkNew12=loop.run_until_complete(main(params12, "בבלי-תל אביב",bot,chat_id_Tom,chat_id_Lee))
-
-    if checkNew1==False and checkNew2==False and checkNew3==False and checkNew4==False and checkNew5==False and checkNew6==False and checkNew7==False and checkNew8==False and checkNew9==False and checkNew10==False and checkNew11==False and checkNew12==False:
+    # Notify users if there are no new properties in any neighborhood
+    if all(not prop for prop in new_properties):
         loop.run_until_complete(send_message_async(bot, chat_id_Tom, "*אין דירות חדשות*"))
         loop.run_until_complete(send_message_async(bot, chat_id_Lee, "*אין דירות חדשות*"))
