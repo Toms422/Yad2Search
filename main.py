@@ -44,8 +44,10 @@ async def main(params,neighborhood,bot,chat_id_Tom,chat_id_Lee):
     for i in range(1):
         base_url = "https://gw.yad2.co.il/feed-search-legacy/realestate/rent"
         params['page'] = i
+
+        filtered_params = {key: value for key, value in params.items() if key != 'name'}
         # Encode the parameters
-        encoded_params = urlencode(params)
+        encoded_params = urlencode(filtered_params)
         # Construct the final URL
         final_url = f"{base_url}?{encoded_params}"
         time.sleep(1)
