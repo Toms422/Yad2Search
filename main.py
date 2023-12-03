@@ -261,6 +261,34 @@ if __name__ == "__main__":
         'forceLdLoad': True,
     }
 
+    # תל אביב צפון ישן, 2.5-4 חדרים, עד 7000 שקל, כולל מרפסת, לא מתיווך
+    params11 = {
+        'topArea': 2,
+        'area': 1,
+        'city': 5000,
+        'rooms': '2.5-4',
+        'price': '0-7000',
+        'balcony': 1,
+        'parking':1,
+        'neighborhood': 204,
+        'squaremeter': '65--1',
+        'forceLdLoad': True,
+    }
+
+     # תל אביב צפון ישן, 2.5-4 חדרים, עד 7000 שקל, כולל מרפסת, לא מתיווך
+    params12 = {
+        'topArea': 2,
+        'area': 1,
+        'city': 5000,
+        'rooms': '2.5-4',
+        'price': '0-7000',
+        'balcony': 1,
+        'parking':1,
+        'neighborhood': 1518,
+        'squaremeter': '65--1',
+        'forceLdLoad': True,
+    }
+
     checkNew1=loop.run_until_complete(main(params1,"הראשונים-רג" ,bot,chat_id_Tom,chat_id_Lee))
     checkNew4=loop.run_until_complete(main(params4, "החשמונאים-רג",bot,chat_id_Tom,chat_id_Lee))
     checkNew10=loop.run_until_complete(main(params10, "החרוזים-רג",bot,chat_id_Tom,chat_id_Lee))
@@ -271,7 +299,9 @@ if __name__ == "__main__":
     checkNew6=loop.run_until_complete(main(params6, "גבעת רמבם-גבעתיים",bot,chat_id_Tom,chat_id_Lee))
     checkNew7=loop.run_until_complete(main(params7, "נחלת יצחק-תל אביב",bot,chat_id_Tom,chat_id_Lee))
     checkNew8=loop.run_until_complete(main(params8, "מונטיפיורי-תל אביב",bot,chat_id_Tom,chat_id_Lee))
+    checkNew11=loop.run_until_complete(main(params11, "צפון ישן-תל אביב",bot,chat_id_Tom,chat_id_Lee))
+    checkNew12=loop.run_until_complete(main(params12, "בבלי-תל אביב",bot,chat_id_Tom,chat_id_Lee))
 
-    if checkNew1==False and checkNew2==False and checkNew3==False and checkNew4==False and checkNew5==False and checkNew6==False and checkNew7==False and checkNew8==False and checkNew9==False and checkNew10==False:
+    if checkNew1==False and checkNew2==False and checkNew3==False and checkNew4==False and checkNew5==False and checkNew6==False and checkNew7==False and checkNew8==False and checkNew9==False and checkNew10==False and checkNew11==False and checkNew12==False:
         loop.run_until_complete(send_message_async(bot, chat_id_Tom, "*אין דירות חדשות*"))
         loop.run_until_complete(send_message_async(bot, chat_id_Lee, "*אין דירות חדשות*"))
