@@ -99,6 +99,7 @@ async def main(params,neighborhood,bot,chat_id_Tom,chat_id_Lee):
                         price=d['price']
                         details=d['row_3'][0]+", "+d['row_3'][1]+", "+d['row_3'][2]
                         date_added = d['date_added']
+                        print(date_added)
                         Addid="https://www.yad2.co.il/item/"+d['id']
                         if date_added not in unique_date_added:
                             unique_date_added.add(date_added)
