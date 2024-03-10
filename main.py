@@ -155,8 +155,8 @@ if __name__ == "__main__":
         #{'name': "קריית יוסף-גבעתיים", 'topArea': 2, 'area': 3, 'city': 6300, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 1644, 'squaremeter': '65--1', 'forceLdLoad': True},
         {'name': "נחלת יצחק-תל אביב", 'topArea': 2, 'area': 1, 'city': 5000, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 317, 'squaremeter': '65--1', 'forceLdLoad': True},
         {'name': "מונטיפיורי-תל אביב", 'topArea': 2, 'area': 1, 'city': 5000, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 485, 'squaremeter': '65--1', 'forceLdLoad': True},
-        #{'name': "צפון ישן-תל אביב", 'topArea': 2, 'area': 1, 'city': 5000, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'parking': 1, 'neighborhood': 204, 'squaremeter': '65--1', 'forceLdLoad': True},
-        #{'name': "בבלי-תל אביב", 'topArea': 2, 'area': 1, 'city': 5000, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'parking': 1, 'neighborhood': 1518, 'squaremeter': '65--1', 'forceLdLoad': True},
+        {'name': "צפון ישן-תל אביב", 'topArea': 2, 'area': 1, 'city': 5000, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'parking': 1, 'neighborhood': 204, 'squaremeter': '65--1', 'forceLdLoad': True},
+        {'name': "בבלי-תל אביב", 'topArea': 2, 'area': 1, 'city': 5000, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'parking': 1, 'neighborhood': 1518, 'squaremeter': '65--1', 'forceLdLoad': True},
     ]
 
     # Check for new properties in each neighborhood
