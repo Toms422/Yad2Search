@@ -50,7 +50,7 @@ async def main(params,neighborhood,bot,chat_id_Tom,chat_id_Lee):
         encoded_params = urlencode(filtered_params)
         # Construct the final URL
         final_url = f"{base_url}?{encoded_params}"
-        time.sleep(1)
+        time.sleep(3)
         response = requests.get(final_url, headers=headers)
 
 
@@ -85,7 +85,7 @@ async def main(params,neighborhood,bot,chat_id_Tom,chat_id_Lee):
         final_url = f"{base_url}?{encoded_params}"
 
         #url = f'https://gw.yad2.co.il/feed-search-legacy/realestate/rent?topArea=2&area=3&city=8600&neighborhood=1647&rooms=2-4&price=0-7000&balcony=1&squaremeter=65--1&page={i}&forceLdLoad=true'
-        time.sleep(1)
+        time.sleep(3)
         response = requests.get(final_url, headers=headers)
 
         if response.status_code == 200 and response.content:
@@ -150,17 +150,17 @@ if __name__ == "__main__":
     # Define property search parameters for different neighborhoods
     neighborhoods_params = [
         {'name': "הראשונים-רג", 'topArea': 2, 'area': 3, 'city': 8600, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 1647, 'squaremeter': '65--1', 'forceLdLoad': True},
-        {'name': "החשמונאים-רג", 'topArea': 2, 'area': 3, 'city': 8600, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 1477, 'squaremeter': '65--1', 'forceLdLoad': True},
+        #{'name': "החשמונאים-רג", 'topArea': 2, 'area': 3, 'city': 8600, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 1477, 'squaremeter': '65--1', 'forceLdLoad': True},
         {'name': "החרוזים-רג", 'topArea': 2, 'area': 3, 'city': 8600, 'rooms': '2.5-4', 'price': '0-7000', 'balcony': 1,'neighborhood': 327, 'squaremeter': '65--1', 'forceLdLoad': True},
         {'name': "בורכוב-גבעתיים", 'topArea': 2, 'area': 3, 'city': 6300, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 355, 'squaremeter': '65--1', 'forceLdLoad': True},
         {'name': "הלה-גבעתיים", 'topArea': 2, 'area': 3, 'city': 6300, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 991510, 'squaremeter': '65--1', 'forceLdLoad': True},
         {'name': "ארלוזורוב-גבעתיים", 'topArea': 2, 'area': 3, 'city': 6300, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 1642, 'squaremeter': '65--1', 'forceLdLoad': True},
-        {'name': "גבעת רמבם-גבעתיים", 'topArea': 2, 'area': 3, 'city': 6300, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 1643, 'squaremeter': '65--1', 'forceLdLoad': True},
-        {'name': "קריית יוסף-גבעתיים", 'topArea': 2, 'area': 3, 'city': 6300, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 1644, 'squaremeter': '65--1', 'forceLdLoad': True},
-        {'name': "נחלת יצחק-תל אביב", 'topArea': 2, 'area': 1, 'city': 5000, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 317, 'squaremeter': '65--1', 'forceLdLoad': True},
-        {'name': "מונטיפיורי-תל אביב", 'topArea': 2, 'area': 1, 'city': 5000, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 485, 'squaremeter': '65--1', 'forceLdLoad': True},
-        {'name': "צפון ישן-תל אביב", 'topArea': 2, 'area': 1, 'city': 5000, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'parking': 1, 'neighborhood': 204, 'squaremeter': '65--1', 'forceLdLoad': True},
-        {'name': "בבלי-תל אביב", 'topArea': 2, 'area': 1, 'city': 5000, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'parking': 1, 'neighborhood': 1518, 'squaremeter': '65--1', 'forceLdLoad': True},
+        #{'name': "גבעת רמבם-גבעתיים", 'topArea': 2, 'area': 3, 'city': 6300, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 1643, 'squaremeter': '65--1', 'forceLdLoad': True},
+        #{'name': "קריית יוסף-גבעתיים", 'topArea': 2, 'area': 3, 'city': 6300, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 1644, 'squaremeter': '65--1', 'forceLdLoad': True},
+        #{'name': "נחלת יצחק-תל אביב", 'topArea': 2, 'area': 1, 'city': 5000, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 317, 'squaremeter': '65--1', 'forceLdLoad': True},
+        #{'name': "מונטיפיורי-תל אביב", 'topArea': 2, 'area': 1, 'city': 5000, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'neighborhood': 485, 'squaremeter': '65--1', 'forceLdLoad': True},
+        #{'name': "צפון ישן-תל אביב", 'topArea': 2, 'area': 1, 'city': 5000, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'parking': 1, 'neighborhood': 204, 'squaremeter': '65--1', 'forceLdLoad': True},
+        #{'name': "בבלי-תל אביב", 'topArea': 2, 'area': 1, 'city': 5000, 'rooms': '2.5-4', 'price': '0-7000','balcony': 1, 'parking': 1, 'neighborhood': 1518, 'squaremeter': '65--1', 'forceLdLoad': True},
     ]
 
     # Check for new properties in each neighborhood
