@@ -54,7 +54,7 @@ async def main(params,neighborhood,bot,chat_id_Tom,chat_id_Lee):
         response = requests.get(final_url, headers=headers)
 
 
-        if response.status_code == 200:
+        if response.status_code == 200 and response.content:
             data = response.json()
             # How many new apartment
             for d in data['data']['feed']['feed_items']:
@@ -66,6 +66,9 @@ async def main(params,neighborhood,bot,chat_id_Tom,chat_id_Lee):
                             TotalCheck = True
                 except (KeyError, ValueError):
                     pass
+        else:
+            print("Invalid or empty response received.")           
+            
     if count>0:
         await send_message_async(bot, chat_id_Tom, f' דירות חדשות בשכונת *{neighborhood}*: {count}')
         await send_message_async(bot, chat_id_Lee, f' דירות חדשות בשכונת *{neighborhood}*: {count}')
@@ -85,7 +88,7 @@ async def main(params,neighborhood,bot,chat_id_Tom,chat_id_Lee):
         time.sleep(1)
         response = requests.get(final_url, headers=headers)
 
-        if response.status_code == 200:
+        if response.status_code == 200 and response.content:
             data = response.json()
             # Process the JSON data as needed
             for d in data['data']['feed']['feed_items']:
@@ -125,6 +128,7 @@ async def main(params,neighborhood,bot,chat_id_Tom,chat_id_Lee):
                 except (KeyError,ValueError):
                     pass
         else:
+            print("Invalid or empty response received.")
             print(f"Request failed with status code: {response.status_code}")
 
         # Save the updated unique_date_added to the JSON file
