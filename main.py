@@ -50,22 +50,25 @@ async def main(params,neighborhood,bot,chat_id_Tom,chat_id_Lee):
         encoded_params = urlencode(filtered_params)
         # Construct the final URL
         final_url = f"{base_url}?{encoded_params}"
-        time.sleep(3)
+        time.sleep(1)
         response = requests.get(final_url, headers=headers)
 
 
         if response.status_code == 200 and response.content:
-            data = response.json()
-            # How many new apartment
-            for d in data['data']['feed']['feed_items']:
-                try:
-                    date_added = d['date_added']
-                    if date_added not in unique_date_added:
-                        if d['feed_source'] == "private":
-                            count = count + 1
-                            TotalCheck = True
-                except (KeyError, ValueError):
-                    pass
+            try:
+                data = response.json()
+                # How many new apartment
+                for d in data['data']['feed']['feed_items']:
+                    try:
+                        date_added = d['date_added']
+                        if date_added not in unique_date_added:
+                            if d['feed_source'] == "private":
+                                count = count + 1
+                                TotalCheck = True
+                    except (KeyError, ValueError):
+                        pass
+             except (KeyError, ValueError):
+                    pass          
         else:
             print("Invalid or empty response received.")           
             
@@ -85,48 +88,51 @@ async def main(params,neighborhood,bot,chat_id_Tom,chat_id_Lee):
         final_url = f"{base_url}?{encoded_params}"
 
         #url = f'https://gw.yad2.co.il/feed-search-legacy/realestate/rent?topArea=2&area=3&city=8600&neighborhood=1647&rooms=2-4&price=0-7000&balcony=1&squaremeter=65--1&page={i}&forceLdLoad=true'
-        time.sleep(3)
+        time.sleep(1)
         response = requests.get(final_url, headers=headers)
 
         if response.status_code == 200 and response.content:
-            data = response.json()
-            # Process the JSON data as needed
-            for d in data['data']['feed']['feed_items']:
-                try:
-                    neighborhood =d['neighborhood']
-                except KeyError:
-                    neighborhood = None
-                try:
-                    if d['feed_source']=="private": # דירות לא מתיווך
-                        Address = d['title_1']
-                        price=d['price']
-                        details=d['row_3'][0]+", "+d['row_3'][1]+", "+d['row_3'][2]
-                        date_added = d['date_added']
-                        print(date_added)
-                        Addid="https://www.yad2.co.il/item/"+d['id']
-                        if date_added not in unique_date_added:
-                            unique_date_added.add(date_added)
-                            #apartment=d['date_added'], d['date'], d['price'], d['title_1'], d['line_2'], d['line_1'], d['line_3'],neighborhood
-                            await send_message_async(bot, chat_id_Tom,f' *כתובת*: {Address}, *מחיר*: {price}. *פרטים נוספים*:  {details} . [קישור למודעה]({Addid}) ')
-                            await send_message_async(bot, chat_id_Lee,f' *כתובת*: {Address}, *מחיר*: {price}. *פרטים נוספים*:  {details} . [קישור למודעה]({Addid}) ')
-                            await bot.send_location(chat_id=chat_id_Tom, latitude=d['coordinates']['latitude'], longitude=d['coordinates']['longitude'])
-                            await bot.send_location(chat_id=chat_id_Lee, latitude=d['coordinates']['latitude'], longitude=d['coordinates']['longitude'])
-
-
-                            media_items = []
-                            check = False
-                            for image in d['images']:
-                                image_url=d['images'][image]['src']
-                                responseImage = requests.get(image_url)
-                                image_bytes = BytesIO(responseImage.content)
-                                #await bot.send_photo(chat_id=chat_id, photo=image_bytes)
-                                media_items.append(InputMediaPhoto(media=image_bytes))
-                                check=True
-                            if check==True:
-                                await bot.send_media_group(chat_id=chat_id_Tom, media=media_items)
-                                await bot.send_media_group(chat_id=chat_id_Lee, media=media_items)
+            try:
+                data = response.json()
+                # Process the JSON data as needed
+                for d in data['data']['feed']['feed_items']:
+                    try:
+                        neighborhood =d['neighborhood']
+                    except KeyError:
+                        neighborhood = None
+                    try:
+                        if d['feed_source']=="private": # דירות לא מתיווך
+                            Address = d['title_1']
+                            price=d['price']
+                            details=d['row_3'][0]+", "+d['row_3'][1]+", "+d['row_3'][2]
+                            date_added = d['date_added']
+                            print(date_added)
+                            Addid="https://www.yad2.co.il/item/"+d['id']
+                            if date_added not in unique_date_added:
+                                unique_date_added.add(date_added)
+                                #apartment=d['date_added'], d['date'], d['price'], d['title_1'], d['line_2'], d['line_1'], d['line_3'],neighborhood
+                                await send_message_async(bot, chat_id_Tom,f' *כתובת*: {Address}, *מחיר*: {price}. *פרטים נוספים*:  {details} . [קישור למודעה]({Addid}) ')
+                                await send_message_async(bot, chat_id_Lee,f' *כתובת*: {Address}, *מחיר*: {price}. *פרטים נוספים*:  {details} . [קישור למודעה]({Addid}) ')
+                                await bot.send_location(chat_id=chat_id_Tom, latitude=d['coordinates']['latitude'], longitude=d['coordinates']['longitude'])
+                                await bot.send_location(chat_id=chat_id_Lee, latitude=d['coordinates']['latitude'], longitude=d['coordinates']['longitude'])
+    
+    
+                                media_items = []
+                                check = False
+                                for image in d['images']:
+                                    image_url=d['images'][image]['src']
+                                    responseImage = requests.get(image_url)
+                                    image_bytes = BytesIO(responseImage.content)
+                                    #await bot.send_photo(chat_id=chat_id, photo=image_bytes)
+                                    media_items.append(InputMediaPhoto(media=image_bytes))
+                                    check=True
+                                if check==True:
+                                    await bot.send_media_group(chat_id=chat_id_Tom, media=media_items)
+                                    await bot.send_media_group(chat_id=chat_id_Lee, media=media_items)
+                    except (KeyError,ValueError):
+                        pass
                 except (KeyError,ValueError):
-                    pass
+                    pass    
         else:
             print("Invalid or empty response received.")
             print(f"Request failed with status code: {response.status_code}")
