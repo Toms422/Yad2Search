@@ -1,6 +1,7 @@
 name: run Yad2search
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '*/30 6-22 * * *'
 jobs:
