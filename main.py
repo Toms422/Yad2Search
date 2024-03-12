@@ -131,7 +131,7 @@ async def main(params,neighborhood,bot,chat_id_Tom,chat_id_Lee):
                                     await bot.send_media_group(chat_id=chat_id_Lee, media=media_items)
                     except (KeyError,ValueError):
                         pass
-                except (KeyError,ValueError):
+            except (KeyError,ValueError):
                     pass    
         else:
             print("Invalid or empty response received.")
